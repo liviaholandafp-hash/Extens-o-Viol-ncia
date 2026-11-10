@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede de Proteção e Apoio à Vítima de Violência Sexual | Crateús - CE</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            400: '#a78bfa',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        tealAccent: {
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-banner {
+            background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #0d9488 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- BARRA SUPERIOR DE SEGURANÇA / SAÍDA RÁPIDA -->
+    <div class="sticky top-0 z-50 bg-slate-900 text-white px-4 py-2.5 flex justify-between items-center shadow-md">
+        <div class="flex items-center space-x-2 text-xs md:text-sm">
+            <i class="fa-solid fa-shield-halved text-purple-400"></i>
+            <span class="font-semibold">Navegação Segura</span>
+            <span class="hidden sm:inline text-slate-400">| Caso precise fechar esta página rapidamente:</span>
+        </div>
+        <button onclick="quickEscape()" class="bg-red-600 hover:bg-red-700 text-white font-extrabold py-1.5 px-4 rounded-full text-xs md:text-sm flex items-center space-x-1.5 transition duration-150 shadow focus:outline-none focus:ring-2 focus:ring-red-400" title="Sair imediatamente desta página">
+            <i class="fa-solid fa-person-running"></i>
+            <span>SAÍDA RÁPIDA</span>
+        </button>
+    </div>
+
+    <!-- HEADER PRINCIPAL -->
+    <header class="gradient-banner text-white py-12 px-4 shadow-lg">
+        <div class="max-w-5xl mx-auto text-center space-y-4">
+            <div class="inline-block bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs md:text-sm font-semibold tracking-wide uppercase">
+                Crateús &bull; Ceará &bull; Brasil
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+                Rede de Proteção e Apoio contra a Violência Sexual
+            </h1>
+            <p class="text-purple-100 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
+                Guia orientativo, acolhimento em saúde, suporte jurídico e contatos de emergência nas instâncias Municipal, Estadual e Federal.
+            </p>
+            <div class="pt-4 flex flex-wrap justify-center gap-3">
+                <a href="#emergencia" class="bg-white text-purple-900 hover:bg-purple-50 px-5 py-3 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
+                    <i class="fa-solid fa-phone-volume text-red-600"></i> Telefones da Rede
+                </a>
+                <a href="#itinerario" class="bg-purple-900/60 hover:bg-purple-900/90 border border-purple-300/40 text-white px-5 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-route"></i> Itinerário de Atendimento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10 space-y-12 flex-grow">
+
+        <!-- MENSAGEM ACOLHEDORA DE IMPACTO -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-purple-100 flex flex-col md:flex-row gap-6 items-center">
+            <div class="bg-purple-100 p-5 rounded-2xl text-purple-700 flex-shrink-0">
+                <i class="fa-solid fa-heart-pulse text-4xl"></i>
+            </div>
+            <div class="space-y-2 text-center md:text-left">
+                <h2 class="text-xl md:text-2xl font-bold text-purple-950">A culpa NUNCA é da vítima!</h2>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                    Se você ou alguém próximo sofreu violência sexual, saiba que o atendimento médico inicial pelo SUS é <strong>gratuito, sigiloso, garantido por lei e NÃO exige a apresentação prévia de Boletim de Ocorrência policial</strong>. A sua saúde física e emocional é a prioridade imediata.
+                </p>
+            </div>
+        </section>
+
+        <!-- ITINERÁRIO E GUIA DE AÇÃO PASSO A PASSO INTERATIVO -->
+        <section id="itinerario" class="space-y-6">
+            <div class="border-l-4 border-purple-600 pl-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Itinerário de Atendimento e Orientação</h2>
+                <p class="text-slate-600 text-sm md:text-base">Saiba os passos exatos a seguir para garantir proteção, profilaxia médica e acolhimento.</p>
+            </div>
+
+            <!-- ALTERNÂNCIA DE PERSPECTIVA -->
+            <div class="bg-purple-50 p-1.5 rounded-xl flex max-w-md mx-auto shadow-inner border border-purple-100">
+                <button onclick="setPerspective('vitima')" id="tab-vitima" class="w-1/2 py-2.5 rounded-lg text-sm font-bold transition duration-200 bg-purple-700 text-white shadow">
+                    <i class="fa-solid fa-user-shield mr-1"></i> Sou a Vítima
+                </button>
+                <button onclick="setPerspective('ajudando')" id="tab-ajudando" class="w-1/2 py-2.5 rounded-lg text-sm font-bold transition duration-200 text-purple-900 hover:bg-purple-100">
+                    <i class="fa-solid fa-hand-holding-heart mr-1"></i> Estou Ajudando Alguém
+                </button>
+            </div>
+
+            <!-- CONTEÚDO DAS ETAPAS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+
+                <!-- ETAPA 1: SAÚDE (PRIMEIRAS 72 HORAS) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-purple-100 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="w-8 h-8 rounded-full bg-red-100 text-red-600 font-extrabold flex items-center justify-center text-sm">1</span>
+                            <span class="text-xs font-bold bg-red-50 text-red-700 px-2.5 py-1 rounded-full uppercase border border-red-200">Até 72 Horas (Urgência)</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-kit-medical text-red-500"></i> Cuidados de Saúde
+                        </h3>
+                        <div id="desc-etapa-1" class="text-xs md:text-sm text-slate-600 space-y-2 leading-relaxed">
+                            <!-- Inserido via JS dinamicamente -->
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 text-xs font-medium text-purple-900">
+                        📍 <strong>Local em Crateús:</strong> Hospital Regional de Crateús / Unidades de Saúde da Família.
+                    </div>
+                </div>
+
+                <!-- ETAPA 2: REGISTRO LEGAL E MEDIDAS PROTETIVAS -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-purple-100 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 font-extrabold flex items-center justify-center text-sm">2</span>
+                            <span class="text-xs font-bold bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full uppercase border border-purple-200">Proteção Legal</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-gavel text-purple-600"></i> Registro e Proteção
+                        </h3>
+                        <div id="desc-etapa-2" class="text-xs md:text-sm text-slate-600 space-y-2 leading-relaxed">
+                            <!-- Inserido via JS dinamicamente -->
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 text-xs font-medium text-purple-900">
+                        📍 <strong>Local em Crateús:</strong> DEAM Crateús ou Delegacia Eletrônica da PC-CE.
+                    </div>
+                </div>
+
+                <!-- ETAPA 3: ACOMPANHAMENTO PSICOSSOCIAL -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-purple-100 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="w-8 h-8 rounded-full bg-teal-100 text-teal-700 font-extrabold flex items-center justify-center text-sm">3</span>
+                            <span class="text-xs font-bold bg-teal-50 text-teal-700 px-2.5 py-1 rounded-full uppercase border border-teal-200">Continuidades</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-hand-holding-hand text-teal-600"></i> Apoio Contínuo
+                        </h3>
+                        <div id="desc-etapa-3" class="text-xs md:text-sm text-slate-600 space-y-2 leading-relaxed">
+                            <!-- Inserido via JS dinamicamente -->
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-slate-100 text-xs font-medium text-purple-900">
+                        📍 <strong>Local em Crateús:</strong> CREAS de Crateús e Casa da Mulher Cearense.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TELEFONES DE EMERGÊNCIA (REDE DE PROTEÇÃO COMPLETA) -->
+        <section id="emergencia" class="space-y-6">
+            <div class="border-l-4 border-purple-600 pl-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Rede de Apoio & Telefones Úteis</h2>
+                <p class="text-slate-600 text-sm md:text-base">Clique ou toque em qualquer número para realizar a chamada imediata.</p>
+            </div>
+
+            <!-- ABAS DE FILTRO POR NÍVEL (LOCAL, ESTADUAL, FEDERAL) -->
+            <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-3">
+                <button onclick="filterContacts('all')" id="btn-all" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs md:text-sm bg-purple-700 text-white transition shadow-sm">Todos os Canais</button>
+                <button onclick="filterContacts('crateus')" id="btn-crateus" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs md:text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition">📍 Crateús (Local)</button>
+                <button onclick="filterContacts('ceara')" id="btn-ceara" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs md:text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition">🏛️ Ceará (Estadual)</button>
+                <button onclick="filterContacts('federal')" id="btn-federal" class="tab-btn px-4 py-2 rounded-xl font-bold text-xs md:text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition">🇧🇷 Nacional (Federal)</button>
+            </div>
+
+            <!-- GRID DE CONTATOS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- CRATEÚS - CASA DA MULHER CEARENSE -->
+                <div class="contact-card crateus bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-purple-100 text-purple-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Atendimento Local</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Crateús</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Casa da Mulher Cearense - Crateús</h3>
+                        <p class="text-xs text-slate-500 mt-1">Acolhimento humanizado, apoio psicológico, social e orientação jurídica integrada para mulheres no município.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:8531066258" class="w-full bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-phone"></i> Ligar: (85) 3106-6258
+                        </a>
+                        <a href="https://wa.me/558531066258" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Casa da Mulher
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CRATEÚS - DELEGACIA DA MULHER / DEAM -->
+                <div class="contact-card crateus bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-purple-100 text-purple-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Polícia Civil</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Crateús</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Delegacia da Mulher (DEAM) - Crateús</h3>
+                        <p class="text-xs text-slate-500 mt-1">Registro de Boletim de Ocorrência especializado, pedido de Medidas Protetivas de Urgência e investigação.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:8521130653" class="w-full bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-phone"></i> Ligar: (85) 2113-0653
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CRATEÚS - HOSPITAL REGIONAL / PEP -->
+                <div class="contact-card crateus bg-white p-6 rounded-2xl shadow-sm border border-red-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Emergência Médica</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Crateús</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Hospital Regional de Crateús & Postos de Saúde</h3>
+                        <p class="text-xs text-slate-500 mt-1">Atendimento médico 24h para profilaxia antiviral (PEP), contracepção de emergência e exame preventivo no SUS.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:192" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-truck-medical"></i> Ligar SAMU: 192
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CRATEÚS - CREAS -->
+                <div class="contact-card crateus bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-purple-100 text-purple-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Assistência Social</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Crateús</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">CREAS - Crateús</h3>
+                        <p class="text-xs text-slate-500 mt-1">Centro de Referência Especializado de Assistência Social. Acompanhamento psicossocial para indivíduos e famílias.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:100" class="w-full border border-purple-600 text-purple-700 hover:bg-purple-50 font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition">
+                            <i class="fa-solid fa-building-user"></i> Atendimento no Município
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CRATEÚS - CONSELHO TUTELAR -->
+                <div class="contact-card crateus bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Infância e Juventude</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Crateús</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Conselho Tutelar de Crateús</h3>
+                        <p class="text-xs text-slate-500 mt-1">Proteção de direitos de crianças e adolescentes vítimas ou testemunhas de violência e abuso sexual.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:100" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-child-reaching"></i> Denunciar pelo Disque 100
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ESTADUAL - CASA DA MULHER CEARENSE (ESTADO DO CEARÁ) -->
+                <div class="contact-card ceara bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-teal-100 text-teal-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Rede Estadual</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Ceará</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Rede Casa da Mulher Cearense (SPS-CE)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Programa governamental do Estado do Ceará com atendimento integrado, equipe multidisciplinar e apoio jurídico.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:155" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-headset"></i> Ouvidoria Estadual: 155
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ESTADUAL - DEFENSORIA PÚBLICA DO CEARÁ -->
+                <div class="contact-card ceara bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-teal-100 text-teal-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Assistência Jurídica</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Ceará</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Defensoria Pública do Estado do Ceará</h3>
+                        <p class="text-xs text-slate-500 mt-1">Assistência jurídica gratuita, orientação processual e acompanhamento das Medidas Protetivas.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:129" class="w-full bg-teal-700 hover:bg-teal-800 text-white font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-scale-balanced"></i> Disque Defensoria: 129
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FEDERAL - LIGUE 180 -->
+                <div class="contact-card federal bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-blue-100 text-blue-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Canal Nacional 24h</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Brasil</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Ligue 180 - Central da Mulher</h3>
+                        <p class="text-xs text-slate-500 mt-1">Serviço público gratuito e confidencial de orientação e denúncia em todo o território nacional.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:180" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-phone"></i> Ligar Grátis: 180
+                        </a>
+                        <a href="https://wa.me/556196100180" target="_blank" rel="noopener noreferrer" class="w-full border border-blue-600 text-blue-800 hover:bg-blue-50 font-bold py-2 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition">
+                            <i class="fa-brands fa-whatsapp text-lg text-emerald-600"></i> WhatsApp 180 Oficial
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FEDERAL - DISQUE 100 -->
+                <div class="contact-card federal bg-white p-6 rounded-2xl shadow-sm border border-purple-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-blue-100 text-blue-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Direitos Humanos</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">Brasil</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Disque 100 - Direitos Humanos</h3>
+                        <p class="text-xs text-slate-500 mt-1">Denúncias relativas a crianças, adolescentes, pessoas com deficiência e idosos em situação de violência.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:100" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-phone"></i> Ligar Grátis: 100
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FEDERAL / GERAL - POLÍCIA MILITAR 190 -->
+                <div class="contact-card federal crateus ceara bg-white p-6 rounded-2xl shadow-sm border border-red-200 hover:shadow-md transition flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-red-100 text-red-900 text-xs font-bold px-2.5 py-1 rounded-full uppercase">Emergência Policial</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-medium">24h</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">190 - Polícia Militar</h3>
+                        <p class="text-xs text-slate-500 mt-1">Socorro policial imediato para momentos de flagrante, risco iminente ou agressão em andamento.</p>
+                    </div>
+                    <div class="space-y-2 pt-2 border-t border-slate-100">
+                        <a href="tel:190" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm transition shadow-sm">
+                            <i class="fa-solid fa-shield-cat"></i> Ligar Emergência: 190
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONSCIENTIZAÇÃO E APOIO CONTEXTUAL -->
+        <section class="space-y-6">
+            <div class="border-l-4 border-purple-600 pl-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Conscientização nos Diversos Contextos</h2>
+                <p class="text-slate-600 text-sm md:text-base">A violência sexual manifesta-se de diferentes formas. Reconhecer o abuso é o primeiro passo para a proteção.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- CONTEXTO FAMILIAR -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
+                        <i class="fa-solid fa-house-chimney-user text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Ambiente Familiar</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Abusos cometidos por familiares ou conhecidos no lar costumam envolver manipulação afetiva. Nenhum vínculo familiar justifica atos sem consentimento.
+                    </p>
+                </div>
+
+                <!-- CONTEXTO ESCOLAR / UNIVERSITÁRIO -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
+                        <i class="fa-solid fa-graduation-cap text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Escolas e Universidades</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Assédio, investidas não consentidas e importunação sexual em locais de estudo devem ser denunciados às direções escolares e autoridades policiais.
+                    </p>
+                </div>
+
+                <!-- CONTEXTO DE TRABALHO -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center">
+                        <i class="fa-solid fa-briefcase text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Ambiente de Trabalho</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Chantagens por cargos, abordagens indevidas e intimidação sexual por superiores ou colegas constituem assédio sexual (Crime previsto no Art. 216-A do CP).
+                    </p>
+                </div>
+
+                <!-- CONTEXTO DIGITAL -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center">
+                        <i class="fa-solid fa-laptop-code text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Ambiente Digital</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Vazamento de fotos íntimas sem autorização, chantagem virtual (sextorsão) e perseguição online são crimes graves e devem ser documentados com prints.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ COMPLETO -->
+    <footer class="bg-slate-900 text-slate-400 py-10 px-4 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div class="space-y-2">
+                <div class="flex items-center justify-center md:justify-start gap-2 text-white font-bold text-lg">
+                    <i class="fa-solid fa-shield-heart text-purple-400"></i>
+                    <span>Rede de Proteção - Crateús / Ceará</span>
+                </div>
+                <p class="text-xs max-w-md text-slate-400">
+                    Página informativa de utilidade pública para divulgação dos canais de apoio, garantias médicas de urgência e contatos institucionais.
+                </p>
+            </div>
+            <div class="text-xs space-y-1">
+                <p>📍 Atendimento Emergencial SUS: 24 Horas</p>
+                <p>📞 Ligue 180 (Central da Mulher) | Disque 100 (Direitos Humanos)</p>
+                <p class="text-purple-400 pt-2 font-semibold">Em situações de perigo imediato, ligue para a Polícia Militar (190).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGICA JAVASCRIPT INTEGRADA -->
+    <script>
+        // Dados para o Itinerário (Perspectivas)
+        const itineraryData = {
+            vitima: {
+                etapa1: `
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li><strong>Dirija-se ao Hospital Regional de Crateús:</strong> O atendimento médico prioritário previne infecções (HIV/ISTs) e gravidez.</li>
+                        <li><strong>Profilaxia PEP em até 72h:</strong> Deve ser tomada o mais rápido possível para maior eficácia médica.</li>
+                        <li><strong>Não se lave antes do atendimento:</strong> Se possível, evite tomar banho ou trocar de roupa imediatamente para preserar vestígios periciais, mas a <strong>sua saúde vem antes</strong> de qualquer detalhe.</li>
+                        <li><strong>Atendimento sem BO:</strong> O SUS é obrigado por lei a realizar a medicação e exame sem a obrigatoriedade de registrar BO antes.</li>
+                    </ul>
+                `,
+                etapa2: `
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li><strong>Procure a DEAM Crateús:</strong> Ligue para <span class="font-semibold text-purple-700">(85) 2113-0653</span> ou vá à Casa da Mulher Cearense.</li>
+                        <li><strong>Boletim de Ocorrência:</strong> Relate os fatos com acolhimento especializado. Pode ser feito também pela Delegacia Eletrônica da PC-CE.</li>
+                        <li><strong>Medida Protetiva de Urgência:</strong> Solicite imediatamente o afastamento e a proibição de aproximação do agressor.</li>
+                    </ul>
+                `,
+                etapa3: `
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li><strong>Acompanhamento no CREAS Crateús:</strong> Receba suporte psicológico e social gratuito e contínuo.</li>
+                        <li><strong>Defensoria Pública (Disque 129):</strong> Acompanhamento jurídico gratuito durante os procedimentos legais.</li>
+                        <li><strong>Fortalecimento de Redes de Apoio:</strong> Conte com amigos, familiares e serviços especializados para a sua reconstrução emocional.</li>
+                    </ul>
+                `
+            },
+            ajudando: {
+                etapa1: `
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li><strong>Escute com empatia e sem julgar:</strong> Reafirme que a culpa jamais é da pessoa agredida.</li>
+                        <li><strong>Encaminhe com urgência à Saúde:</strong> Acompanhe a vítima até o Hospital Regional ou Posto de Saúde de Crateús nas primeiras 72 horas para a medicação preventiva (PEP).</li>
+                        <li><strong>Garanta sigilo absoluto:</strong> Respeite o tempo e a privacidade da pessoa acolhida.</li>
+                    </ul>
+                `,
+                etapa2: `
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li><strong>Ofereça acompanhamento:</strong> Se a vítima desejar denunciar, ofereça-se para ir à Delegacia da Mulher (DEAM) de Crateús ou à Casa da Mulher Cearense.</li>
+                        <li><strong>Auxilie no contato:</strong> Ligue para o Ligue 180 ou para a DEAM <span class="font-semibold text-purple-700">(85) 2113-0653</span> para entender o melhor horário e suporte.</li>
+                        <li><strong>Respeite a autonomia:</strong> Em adultos capazes, apoie e oriente, incentivando o registro oficial de proteção.</li>
+                    </ul>
+                `,
+                etapa3: `
+                    <ul class="space-y-2 list-disc list-inside">
+                        <li><strong>Conecte aos serviços de apoio:</strong> Encaminhe a pessoa para o CREAS de Crateús para suporte de psicólogos e assistentes sociais.</li>
+                        <li><strong>Mantenha-se presente:</strong> O processo de recuperação requer presença, paciência e paciência sem pressões.</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Função para alternar entre "Sou a Vítima" e "Estou Ajudando Alguém"
+        function setPerspective(type) {
+            const btnVitima = document.getElementById('tab-vitima');
+            const btnAjudando = document.getElementById('tab-ajudando');
+            
+            if (type === 'vitima') {
+                btnVitima.className = "w-1/2 py-2.5 rounded-lg text-sm font-bold transition duration-200 bg-purple-700 text-white shadow";
+                btnAjudando.className = "w-1/2 py-2.5 rounded-lg text-sm font-bold transition duration-200 text-purple-900 hover:bg-purple-100";
+            } else {
+                btnAjudando.className = "w-1/2 py-2.5 rounded-lg text-sm font-bold transition duration-200 bg-purple-700 text-white shadow";
+                btnVitima.className = "w-1/2 py-2.5 rounded-lg text-sm font-bold transition duration-200 text-purple-900 hover:bg-purple-100";
+            }
+
+            document.getElementById('desc-etapa-1').innerHTML = itineraryData[type].etapa1;
+            document.getElementById('desc-etapa-2').innerHTML = itineraryData[type].etapa2;
+            document.getElementById('desc-etapa-3').innerHTML = itineraryData[type].etapa3;
+        }
+
+        // Função para filtrar contatos (Crateús, Ceará, Federal ou Todos)
+        function filterContacts(category) {
+            const cards = document.querySelectorAll('.contact-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => {
+                btn.className = "tab-btn px-4 py-2 rounded-xl font-bold text-xs md:text-sm bg-slate-200 text-slate-700 hover:bg-slate-300 transition";
+            });
+
+            const activeBtn = document.getElementById('btn-' + category);
+            if(activeBtn) {
+                activeBtn.className = "tab-btn px-4 py-2 rounded-xl font-bold text-xs md:text-sm bg-purple-700 text-white transition shadow-sm";
+            }
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    if (card.classList.contains(category)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        // Função de Saída Rápida de Segurança
+        function quickEscape() {
+            window.location.replace("https://www.google.com");
+        }
+
+        // Inicializar com a visão da vítima
+        window.onload = function() {
+            setPerspective('vitima');
+        };
+    </script>
+</body>
+</html>
